@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 @Entity
 public class Book {
+    //Attributes
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -16,6 +17,12 @@ public class Book {
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors = new HashSet<>();
+    @OneToMany
+    @JoinColumn(name = "book_id")
+    private Set<Image> images = new HashSet<>();
+
+
+    //Constuctors
 
     public Book() {
     }
@@ -30,6 +37,7 @@ public class Book {
         this.title = title;
         this.isbn = isbn;
     }
+    //Getters and setters
 
     public Publisher getPublisher() {
         return publisher;
@@ -70,6 +78,14 @@ public class Book {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Set<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(Set<Image> images) {
+        this.images = images;
     }
 
     public String getTitle() {

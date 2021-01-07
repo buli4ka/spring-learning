@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 @Entity
 public class Author {
+    //Attributes
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -19,6 +20,8 @@ public class Author {
         this.books = books;
     }
 
+
+    //Constuctors
     public Author() {
     }
 
@@ -51,6 +54,9 @@ public class Author {
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
     }
+
+
+    //Getters and setters
     public Long getId() {
         return id;
     }

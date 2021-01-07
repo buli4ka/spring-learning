@@ -2,12 +2,16 @@ package buli4ka.learning.learningSpring.bootstrap;
 
 import buli4ka.learning.learningSpring.domain.Author;
 import buli4ka.learning.learningSpring.domain.Book;
+import buli4ka.learning.learningSpring.domain.Image;
 import buli4ka.learning.learningSpring.domain.Publisher;
 import buli4ka.learning.learningSpring.repositories.AuthorRepository;
 import buli4ka.learning.learningSpring.repositories.BookRepository;
 import buli4ka.learning.learningSpring.repositories.PublisherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 @Component
 public class BootStrapData implements CommandLineRunner {
@@ -59,5 +63,7 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println("Number of books:" + bookRepository.count());
         System.out.println("Publisher number of books: " + publisher.getBooks().size());
+
+
     }
 }

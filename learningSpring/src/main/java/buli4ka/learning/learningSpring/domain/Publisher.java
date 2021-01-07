@@ -6,6 +6,7 @@ import java.util.Set;
 
 @Entity
 public class Publisher {
+    //Attributes
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -19,6 +20,7 @@ public class Publisher {
     @JoinColumn(name = "publisher_id")
     private Set<Book> books = new HashSet<>();
 
+    //Constuctor
     public Publisher() {
 
     }
@@ -49,6 +51,7 @@ public class Publisher {
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
     }
+    //Getters and setters
 
     public Set<Book> getBooks() {
         return books;
